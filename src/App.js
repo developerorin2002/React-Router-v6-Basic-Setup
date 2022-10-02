@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css'
-import Friends from './components/Home/Friends';
+import Friends from './components/Friends/Friends';
 import Home from './components/Home/Home';
 import HomeLayout from './HomeLayout/HomeLayout';
 import Products from './components/Products/Products'
@@ -13,7 +13,10 @@ const App = () => {
       children:[
         {
           path:'/friend',
-          element:<Friends></Friends>
+          loader :()=>{
+            return fetch('https://jsonplaceholder.typicode.com/users')
+          },
+          element:<Friends></Friends>,
         },
         {
           path:'/home',
