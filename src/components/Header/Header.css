@@ -5,3 +5,11 @@
     color: #fff;
     
 }
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: purple;
+}
+.header > .active{
+    background-color: rgb(4, 107, 59);
+}
